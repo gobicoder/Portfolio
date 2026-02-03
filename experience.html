@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOBINATH | Experience</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Inline CSS -->
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { background:#0f172a; color:#cbd5f5; line-height:1.6; }
+.container { max-width:1200px; margin:auto; padding:60px 20px; }
+h2 { font-size:2rem; text-align:center; margin-bottom:30px; color:#fff; margin-top:80px; scroll-margin-top:100px; }
+
+/* Navigation */
+.main-nav { width:100%; background-color:#1f1f1f; color:#fff; padding:15px 0; position:fixed; top:0; left:0; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.3); }
+.main-nav .container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:0 20px; }
+.main-nav .logo h4 { color:#38bdf8; font-size:1.5rem; margin:0; }
+.main-nav .nav-links { list-style:none; display:flex; gap:30px; }
+.main-nav .nav-links li a { color:#fff; text-decoration:none; font-weight:500; padding:5px 0; display:flex; align-items:center; gap:5px; transition: color 0.3s, border-bottom 0.3s; }
+.main-nav .nav-links li a:hover, .main-nav .nav-links li a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
+.hamburger { display:none; font-size:1.5rem; cursor:pointer; color:#38bdf8; }
+@media(max-width:768px){ .hamburger{display:block;} .main-nav .nav-links{position:absolute;top:60px;right:0;background:#1f1f1f;flex-direction:column;width:200px;padding:15px;gap:15px;transform:translateX(100%);transition:transform 0.3s ease;} .main-nav .nav-links.active{transform:translateX(0);} .main-nav .nav-links li a{padding:10px 0;} }
+
+/* Timeline */
+.timeline { position:relative; margin:0 auto; padding:20px 0; }
+.timeline::after { content:''; position:absolute; width:4px; background:#38bdf8; top:0; bottom:0; left:50%; transform:translateX(-50%); }
+.timeline-item { padding:20px 40px; position:relative; width:50%; box-sizing:border-box; opacity:0; transition: all 0.8s ease; }
+.timeline-item.in-view { opacity:1; transform:translateY(0); }
+.timeline-item.left { left:0; }
+.timeline-item.right { left:50%; }
+.timeline-item::before { content:''; position:absolute; width:20px; height:20px; background:#38bdf8; border-radius:50%; top:20px; z-index:1; border:2px solid #0f172a; }
+.timeline-item.left::before { right:-10px; }
+.timeline-item.right::before { left:-10px; }
+.timeline-item .content { background:#1e293b; padding:20px; border-radius:10px; border:1px solid #38bdf8; }
+.timeline-item h3 { color:#38bdf8; margin:0 0 5px 0; }
+.timeline-item h4 { color:#60a5fa; margin:0 0 10px 0; font-weight:500; }
+.timeline-item .year { font-weight:600; color:#60a5fa; margin-bottom:10px; display:block; }
+.timeline-item ul { margin:0; padding-left:20px; color:#cbd5f5; }
+
+/* Fade-up animation */
+.fade-up { opacity:0; transform:translateY(30px); transition: all 0.8s ease; }
+.fade-up.in-view { opacity:1; transform:translateY(0); }
+
+/* Footer */
+.footer { background:#1f2937; color:#e5e7eb; padding:20px 0; text-align:center; font-size:0.9rem; }
+
+/* Responsive */
+@media screen and (max-width:1023px){ .timeline-item{padding:20px 30px;} }
+@media screen and (max-width:768px){ .timeline::after{left:20px;} .timeline-item{width:100%;padding-left:50px;padding-right:20px;margin-bottom:30px;} .timeline-item.left, .timeline-item.right{left:0;} .timeline-item::before{left:10px; right:auto; top:20px;} }
+</style>
+</head>
+
+<body>
+
+<header class="main-nav">
+  <div class="container">
+    <div class="logo"><h4>GOBINATH</h4></div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="experience.html" class="active"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="container">
+  <h2 class="fade-up">Experience</h2>
+  <div class="timeline" id="timeline"></div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 GOBINATH E. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Inline JS -->
+<script>
+// Hamburger toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+hamburger.addEventListener('click',()=>{ navLinks.classList.toggle('active'); });
+
+// Jobs data
+const jobs=[
+{title:"Trainee",company:"Blinkit",start:"2025-05",end:"present",responsibilities:["Responsible for managing inventory, picking and packing orders, maintaining store hygiene, and coordinating with delivery partners to ensure fast and accurate order fulfillment.","Contributed to smooth operations and customer satisfaction through teamwork, quality checks, and efficient handling of daily tasks."],achievements:[]},
+{title:"Rover",company:"The Bharat Scouts and Guides",start:"2022-09",end:"present",responsibilities:["As a Rover in The Bharat Scouts and Guides, I actively participated in scouting activities, leadership training, and adventure programs while contributing to community development through cleanliness drives, awareness campaigns, and service projects.","My involvement emphasized teamwork, discipline, and civic responsibility, and I collaborated with fellow scouts and local organizations to implement impactful social service initiatives."],achievements:[]},
+{title:"Volunteer",company:"Unnat Bharat Abhiyan",start:"2024-05",end:"2025-05",responsibilities:["As a volunteer with Unnat Bharat Abhiyan, I actively engaged with rural communities to promote awareness on health, sanitation, and education.","I supported teaching and digital literacy initiatives, assisted in sustainable projects such as waste management and water conservation, and collaborated with Panchayats, NGOs, and institutions to drive community development.","My role also involved conducting surveys, documenting activities, and preparing reports to evaluate the impact of various initiatives."],achievements:[]},
+{title:"Coordinator",company:"National Service Scheme",start:"2022-09",end:"2025-05",responsibilities:["As a Coordinator in the National Service Scheme, I led and organized social service activities, awareness drives, and community outreach programs.","I guided volunteers in planning and executing initiatives focused on health, sanitation, environment, and education, while fostering teamwork, leadership, and civic responsibility.","My role also involved collaborating with local authorities and NGOs to maximize impact and documenting outcomes for effective evaluation.","World Record Event (Asia Book of Records): Mass training on Basic Life Support and Recovery Position conducted successfully.","Revenue Department – Govt. of Tamil Nadu (Project Back to School): Initiative launched to bring drop‑out children back into classrooms.","NSS Special Camp (7 Days): Volunteers engaged in community service, health awareness, and environmental activities."],achievements:[]}
+];
+
+// Helper function: calculate duration
+function calculateDuration(startDate,endDate){
+const start=new Date(startDate);
+const end=(endDate==="present")?new Date():new Date(endDate);
+let years=end.getFullYear()-start.getFullYear();
+let months=end.getMonth()-start.getMonth();
+if(months<0){years--;months+=12;}
+const yearText=years>0?years+(years===1?" year":" years"):"";
+const monthText=months>0?months+(months===1?" month":" months"):"";
+const sep=yearText&&monthText?" ":"";
+const endText=(endDate==="present")?"Present":end.toLocaleString('default',{month:'short'})+" "+end.getFullYear();
+return start.toLocaleString('default',{month:'short'})+" "+start.getFullYear()+" – "+endText+" ("+yearText+sep+monthText+")";
+}
+
+// Render timeline
+const timeline=document.getElementById('timeline');
+jobs.forEach((job,index)=>{
+const side=(index%2===0)?'left':'right';
+const item=document.createElement('div');
+item.className=`timeline-item ${side} fade-up`;
+item.innerHTML=`<div class="content">
+<span class="year">${calculateDuration(job.start,job.end)}</span>
+<h3>${job.title}</h3>
+<h4>${job.company}</h4>
+${job.responsibilities.length?`<p><strong>Key Responsibilities:</strong></p><ul>${job.responsibilities.map(r=>`<li>${r}</li>`).join('')}</ul>`:""}
+${job.achievements.length?`<p><strong>Achievements & Impact:</strong></p><ul>${job.achievements.map(a=>`<li>${a}</li>`).join('')}</ul>`:""}
+</div>`;
+timeline.appendChild(item);
+});
+
+// Fade-up on scroll
+const faders=document.querySelectorAll('.fade-up');
+const appearOptions={threshold:0.2, rootMargin:"0px 0px -50px 0px"};
+const appearOnScroll=new IntersectionObserver((entries,observer)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){ entry.target.classList.add('in-view'); observer.unobserve(entry.target); }
+});
+},appearOptions);
+faders.forEach(fader=>appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>

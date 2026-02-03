@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOBINATH | About</title>
+
+<!-- Google Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Inline CSS -->
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { background:#0f172a; color:#cbd5f5; line-height:1.6; }
+.container { max-width:1200px; margin:auto; padding:60px 20px; }
+
+h2 { font-size:2rem; text-align:center; margin-bottom:20px; color:#fff; margin-top:80px; scroll-margin-top:100px; font-weight:700; }
+h3 { color:#38bdf8; margin-bottom:10px; font-weight:700; }
+p { color:#94a3b8; }
+ul { list-style:circle inside; margin:0; padding-left:0; }
+a { color:#e5e7eb; text-decoration:none; transition:color 0.3s; }
+a:hover { color:#38bdf8; }
+
+/* Navigation */
+.main-nav { width:100%; background-color:#1f1f1f; color:#fff; padding:15px 0; position:fixed; top:0; left:0; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.3); }
+.main-nav .container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:0 20px; }
+.main-nav .logo h4 { color:#38bdf8; font-size:1.5rem; margin:0; }
+.main-nav .nav-links { list-style:none; display:flex; gap:30px; }
+.main-nav .nav-links li a { color:#fff; text-decoration:none; font-weight:500; padding:5px 0; display:flex; align-items:center; gap:5px; transition: color 0.3s, border-bottom 0.3s; }
+.main-nav .nav-links li a:hover, .main-nav .nav-links li a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
+.hamburger { display:none; font-size:1.5rem; cursor:pointer; color:#38bdf8; }
+
+@media(max-width:768px){
+  .hamburger { display:block; }
+  .main-nav .nav-links { position:absolute; top:60px; right:0; background:#1f1f1f; flex-direction:column; width:200px; padding:15px; gap:15px; transform:translateX(100%); transition: transform 0.3s ease; }
+  .main-nav .nav-links.active { transform:translateX(0); }
+  .main-nav .nav-links li a { padding:10px 0; }
+}
+
+/* Fade-up animation */
+.fade-up { opacity:0; transform:translateY(30px); transition: all 0.8s ease; }
+.fade-up.in-view { opacity:1; transform:translateY(0); }
+.delay-1 { transition-delay:0.2s; }
+.delay-2 { transition-delay:0.4s; }
+.delay-3 { transition-delay:0.6s; }
+.delay-4 { transition-delay:0.8s; }
+
+/* About Section */
+.about-content { display:flex; flex-direction:column; gap:40px; align-items:stretch; }
+.about-text { flex:1 1 100%; display:flex; flex-direction:column; gap:20px; }
+
+/* ================= EDUCATION ================= */
+.education-list { display:flex; flex-direction:column; gap:20px; margin-top:20px; }
+.education-card { display:flex; gap:15px; background:#020617; padding:20px; border-radius:12px; border:1px solid #1e293b; box-shadow:0 15px 30px rgba(0,0,0,0.4); align-items:flex-start; }
+.education-card .edu-icon { font-size:2rem; color:#38bdf8; flex-shrink:0; }
+.education-card div h3 { margin-bottom:5px; }
+.education-card div p { margin-bottom:3px; color:#94a3b8; }
+
+/* Footer */
+.footer { background:#1f2937; color:#e5e7eb; padding:20px 0; text-align:center; font-size:0.9rem; }
+
+/* Responsive */
+@media(max-width:1023px){ h2{font-size:1.8rem;} h3{font-size:1.2rem;} .about-content{gap:25px;} }
+@media(max-width:768px){ .about-content{align-items:center;text-align:center;gap:15px;} .education-card{flex-direction:column;text-align:center;align-items:center;} .education-card div{text-align:center;} }
+</style>
+</head>
+
+<body>
+
+<header class="main-nav">
+  <div class="container">
+    <div class="logo"><h4>GOBINATH</h4></div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= ABOUT ME ================= -->
+<section class="container about-content">
+  <h2 class="fade-up delay-1">About Me</h2>
+
+  <div class="about-text fade-up delay-2">
+    <h3>Professional Summary</h3>
+    <p>I am a dedicated professional specializing in <strong>Information Technology</strong>. I help businesses achieve measurable impact through <strong>key skills in IT & Forensic Science</strong>, combining expertise with a passion for delivering results.</p>
+  </div>
+
+  <div class="about-text fade-up delay-3">
+    <h3>Career Journey & Background</h3>
+    <p>Over the years, I have collaborated with <strong>various organizations</strong>, honing skills in <strong>digital forensics, IT, and project management</strong>. This journey has equipped me with strong analytical, technical, and strategic capabilities.</p>
+  </div>
+
+  <div class="about-text fade-up delay-4">
+    <h3>Core Strengths & Values</h3>
+    <ul>
+      <li>Problem-solving & critical thinking</li>
+      <li>Collaboration & teamwork</li>
+      <li>Integrity & professionalism</li>
+      <li>Continuous learning & innovation</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="container">
+  <h2 class="fade-up delay-1">Education</h2>
+
+  <div class="education-list">
+
+    <div class="education-card fade-up delay-2">
+      <span class="material-icons-outlined edu-icon">school</span>
+      <div>
+        <h3>CMS College of Science and Commerce, Coimbatore</h3>
+        <p><strong>M.Sc, Information Technology</strong></p>
+        <p>Jul 2025</p>
+      </div>
+    </div>
+
+    <div class="education-card fade-up delay-3">
+      <span class="material-icons-outlined edu-icon">school</span>
+      <div>
+        <h3>CMS College of Science and Commerce, Coimbatore</h3>
+        <p>
+          <strong>B.Sc Digital and Cyber Forensic Science</strong>,
+          Cyber/Computer Forensics and Counterterrorism
+        </p>
+        <p>Sep 2022 - Apr 2025</p>
+        <p>Activities: National Service Scheme (Coordinator),
+           Bharat Scouts and Guides (Rover)</p>
+      </div>
+    </div>
+
+    <div class="education-card fade-up delay-4">
+      <span class="material-icons-outlined edu-icon">school</span>
+      <div>
+        <h3>Computer Software College</h3>
+        <p>
+          <strong>HDCA - Honours Diploma in Computer Application (Programming)</strong>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container"><p>© 2026 GOBINATH E. All rights reserved.</p></div>
+</footer>
+
+<!-- Inline JS -->
+<script>
+// Hamburger toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+hamburger.addEventListener('click',()=>{ navLinks.classList.toggle('active'); });
+
+// Fade-up animation on scroll
+const fadeElements = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries, obs)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
+  });
+},{threshold:0.3});
+fadeElements.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

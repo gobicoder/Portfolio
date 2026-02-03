@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOBINATH | Portfolio</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Inline CSS -->
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+  body { background:#0f172a; color:#e5e7eb; }
+  .hero { min-height:100vh; display:flex; align-items:center; padding-top:80px; }
+  .container { max-width:1100px; margin:auto; padding:20px; }
+  .hero-content { display:flex; align-items:center; gap:50px; }
+  .hero-left { flex:1; display:flex; justify-content:center; }
+  .profile-img { width:220px; height:220px; border-radius:50%; object-fit:cover; border:4px solid #38bdf8; opacity:0; transform:scale(0.8); animation:profileIn 1s ease forwards; }
+  @keyframes profileIn { to { opacity:1; transform:scale(1); } }
+  .hero-right { flex:2; }
+  #title { font-size:1.8rem; line-height:1.5; opacity:0; white-space:pre-wrap; }
+
+  .main-nav { width:100%; background-color:#1f1f1f; color:#fff; padding:15px 0; position:fixed; top:0; left:0; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.3); }
+  .main-nav .container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:0 20px; }
+  .main-nav .logo h4 { color:#38bdf8; font-size:1.5rem; margin:0; }
+  .main-nav .nav-links { list-style:none; display:flex; gap:30px; }
+  .main-nav .nav-links li a { color:#fff; text-decoration:none; font-weight:500; padding:5px 0; display:flex; align-items:center; gap:5px; transition: color 0.3s, border-bottom 0.3s; }
+  .main-nav .nav-links li a:hover, .main-nav .nav-links li a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
+  .hamburger { display:none; font-size:1.5rem; cursor:pointer; color:#38bdf8; }
+
+  @media(max-width:768px){
+    .hamburger { display:block; }
+    .main-nav .nav-links { position:absolute; top:60px; right:0; background:#1f1f1f; flex-direction:column; width:200px; padding:15px; gap:15px; transform:translateX(100%); transition: transform 0.3s ease; }
+    .main-nav .nav-links.active { transform:translateX(0); }
+    .main-nav .nav-links li a { padding:10px 0; }
+    .hero-content { flex-direction:column; text-align:center; }
+    .profile-img { width:150px; height:150px; margin-bottom:15px; }
+    #title { font-size:1.3rem; }
+  }
+
+  .footer { background-color:#1f2937; color:#e5e7eb; padding:20px 0; text-align:center; font-size:0.9rem; }
+</style>
+</head>
+
+<body>
+
+<header class="main-nav">
+  <div class="container">
+    <div class="logo"><h4>GOBINATH</h4></div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-left">
+        <img src="profile.jpg" alt="Gobinath Profile" class="profile-img" id="profileImg">
+      </div>
+      <div class="hero-right">
+        <h1 id="title"></h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 GOBINATH E. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Inline JS -->
+<script>
+const title = document.getElementById("title");
+const profile = document.getElementById("profileImg");
+const text = `GOBINATH E\nStore Associate at Blinkit | Information Technology | Digital & Cyber Forensic Science\nHonours Diploma in Computer Application (Programming)`;
+let i = 0;
+profile.addEventListener("animationend",()=>{ title.style.opacity=1; typeWriter(); });
+function typeWriter(){ if(i<text.length){ title.textContent+=text.charAt(i++); let delay=(text.charAt(i-1)==="\n")?200:50; setTimeout(typeWriter,delay); } }
+
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+hamburger.addEventListener('click', ()=>{ navLinks.classList.toggle('active'); });
+</script>
+
+</body>
+</html>
